@@ -5,7 +5,7 @@ const addBookHandler = (request, h) => {
   const { name, year, author, summary, publisher, pageCount, readPage, reading } = request.payload
 
   const id = nanoid(16)
-  const finished = pageCount === readPage ? true : false
+  const finished = pageCount === readPage
   const insertedAt = new Date().toISOString()
   const updatedAt = insertedAt
 
@@ -58,7 +58,7 @@ const addBookHandler = (request, h) => {
 const getAllBooksHandler = (request, h) => ({
   status: 'success',
   data: {
-    "books": books.map((person) => {
+    books: books.map((person) => {
       return {
         firstname: person.firstname,
         age: person.age

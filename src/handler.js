@@ -65,8 +65,9 @@ const getAllBooksHandler = (request, h) => ({
   data: {
     books: books.map((person) => {
       return {
-        firstname: person.firstname,
-        age: person.age
+        id: person.id,
+        name: person.name,
+        publisher: person.publisher
       }
     }),
   },
